@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: darkmagenta;
+            transition: all.30s;
+        }
+        div {
+            text-align: center;
+        }
+        button {
+            border: 1px solid rgb(0, 64, 255) ;
+            padding: 15px 20px;
+            border-radius: 20px;
+            background: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+        h2 {
+            animation: gg 1s;
+        }
+
+        @keyframes gg {
+            from {
+                transform: translateX(200px);
+            }
+            to {
+               transform: translateX(0); 
+            }
+        }
+
+        h3 {
+            animation: gg2 1s;
+        }
+
+        @keyframes gg2 {
+            from {
+                transform: translateX(-200px);
+            }
+            to {
+               transform: translateX(0); 
+            }
+        }
+        button{
+            animation: up 1s;
+        }
+        @keyframes up {
+            from {
+                transform: translateY(200px);
+            }
+            to {
+                transform: translate(0px);
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Привет Рафаэль</h3>
+        <h2>Сейчас 12:12:12</h2>
+        <button>Сменить фон</button>
+    </div>
+    <script>
+        const name = prompt('Как вас зовут?')
+        document.querySelector('h3').textContent = 'Привет , ' + name
+        document.querySelector('h2').textContent = 'Сейчас ' + new Date().toLocaleTimeString()
+        setInterval(function() {
+            document.querySelector('h2').textContent = 'Сейчас ' + new Date().toLocaleTimeString()
+            document.querySelector('button').onclick = function() {
+               document.body.style.background = colors1[index]
+               index++
+               if (index >= colors1.length) index = 0
+            }
+        }, 1000)
+        const colors1 = ['AliceBlue', 'Aqua', 'Blue', 'Brown', 'BlueViolet', 'Chartreuse','Coral', 'Crimson', 'Cyan', 'DarkGoldenRod', 'DarkMagenta', 'DarkRed','DeepPink', 'Fuchsia', 'GhostWhite', 'Orange', 'OrangeRed','Purple', 'SpringGreen', 'Yellow', 'MediumSlateBlue', 'MediumSpringGreen','MediumSeaGreen', 'MediumBlue', 'Lime', 'Magenta', 'DeepSkyBlue','Chocolate', 'Indigo','GoldНет', 'SeaShell']
+        let index = 0
+    </script>
+</body>
+</html>
